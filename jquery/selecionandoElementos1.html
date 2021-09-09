@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Selecionando Elementos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        .negrito {
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Selecionando Elementos #01</h1>
+    <div>
+        <p>Parágrafo
+            <span class='negrito'>dentro span</span>
+        </p>
+    </div>
+    <div>
+        <ul id='feira'>
+            <li>Arroz</li>
+            <li wm-obrigatorio>Feijão</li>
+            <li class='opcional'>Carne</li>
+            <li class='opcional'>Ovo</li>
+        </ul>
+    </div>
+    <form>
+        <input type='text' name='texto'>
+        <input type='password' name='senha'>
+        <input class="formatacao" type='checkbox' name='check1'>
+        <input class="formatacao" type='radio' name='radio1'>
+        <input class="formatacao" type='file' name='arquivo'>
+    </form>
+
+    <script>
+        //O Jquery consegue acessar elementos html tanto com a passagem  de valores pelo nome da tag como pelo id do elemento ou a classe do elemento
+        //para isso e nescessario utilizar-se o mesmo padrão de passagem de valores do seletor de arquivos js 'querySelector' ou seja id utilizar "#nome_id", ".nome_classe"
+
+        $('#feira').addClass('destaque').removeClass('destaque')//adicionando funcionalidades em um elemento atravez do seu "id"
+        $('li').addClass('destaque')//adicionando funcionalidades em um elemento atravez da sua 'tag'
+        $('li.opcional').removeClass('destaque')//adicionando funcionalidades em um elemento atravez da sua 'tag e classe' definida
+        $('.negrito').addClass('destaque')////adicionando funcionalidades em um elemento atravez da sua "classe"
+
+        //basicamente com a função 'addClass()' voce pode passar formatações para o arquivo jquery selecionado nesse caso estamos passando a classe css "destaque"
+        //basicamente a função 'removeClass()' e similar ao addclas o seu diferencial e que ele retira as formatações definidas 
+
+        /* atribuindo formatações atravez do css puro*/
+
+        $('li.opcional').css('border', 'solid 3px blue')//atribuindo formatações css no elemento selecionado
+
+        //função "css()" basicamente com esse atributo podemos definir formaçãoes a serem inseridas em um elemento colocando formatações de css puro
+
+        /*Atribuindo Jquery no formulario*/
+
+        $('form *').hide()//sumindo com todos os elementos do formulario
+        $('.formatacao').show(1000)
+        $('form :text').show(3000)//mostrando os elementos do formulario do tipo "text"
+        $('form :password').show(5000)//mostrando os elementos do formulario do tipo "password"
+
+
+
+        //Nesse caso passamos para dentro do Jquery como parametro o nome da tag a qual ele ira realizar a formatação e o tipo de elemento que ela ira receber
+
+
+    </script>
+</body>
