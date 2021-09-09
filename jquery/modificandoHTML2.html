@@ -15,8 +15,36 @@
     <div id='div3'>3</div>
     <p class='numero'>4</p>
     <p class='numero'>5</p>
+    <p id="num">6</p>
 
     <script>
-        // ...
+        $('#div1').after('<p>conteudo1</p>')//gerando tag html fora do elemento selecionado
+        $('#div2').before('<p>conteudo</p>')//gerando tag html fora do elemento selecionado
+
+        //after: Basicamente com esse metodo geramos tags html com o seu local definido ou seja com ela geramos elemento html depois da tag selecionada pelo Jquery
+        //before: E similar ao "after" o seu diferencia e que ele gera conteudo antes da tag selecionada pelo Jquery
+
+        /*passando tag html puro par dentro de outra tag hml puro*/
+
+        //nesse caso podemos utilizar 2 metodos 1º wrap(): passara apena uma tag para dentro da outra | 2º wrapAll : passara varias tags para dentro de outra
+        //Ex: 
+
+        $('#num').wrap('#div3')
+        $('p.numero').wrapAll('#div2')
+
+        //Nesse caso definimos dentro do Jquery a tag a ser passada para dentro da outra
+        //e dentro do wrap/wrapAll definimos qual tag que ira receber as tags a serem passadas 
+
+        /*Removendo valores de tags com Jquery*/
+
+        $('#div3').empty()
+
+        //Basicamente com esse metodo tiramos todos os valores contidos dentro da tag selecionada 
+
+        /*Removendo tags com Jquery*/
+
+        $('#div1').remove()
+
+        //com esse metodo não iremos so remover o conteudo contido dentro da tag mas sim a tag por inteira 
     </script>
 </body>
