@@ -23,6 +23,18 @@
     <div id='animar'>Animar!</div>
 
     <script>        
-        // ...
+        /*Fazendo elementos sumirem da pagina de formas diferentes */
+
+        $('button').click((e) => {
+            $('#animar').hide(1000).show(1000) //metodo Hide : faz com que o elemento selecionado suma da pagina como se estiver ficando pequeno ate sumir
+
+            $('#animar').slideUp(1000).slideDown(1000)//esses mecanismo tem a mesma funcionalidade do exemplo acima porem ele realiza uma animação diferente 
+
+            $('#animar').fadeOut(1000).fadeIn(1000)
+        })
+
+        //Basicamente estamos atribuindo funcionalidades na tag "button" ou seja nesse caso quando o ususario clicar no botão 
+        //esse ato ira disparar o evento "click" que ira realizar alguma funcionalidade que esta definida dentro desse metodo 
+
     </script>
 </body>
