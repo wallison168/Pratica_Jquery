@@ -21,6 +21,21 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        /*Aplicando formatações css com interação de eventos*/
+        const alternando = () => $('#div1').toggleClass('destaque')
+        $('#div1').hover(alternando)
+
+        //metodo "hover" : Basicamente o metodo hover e responsavel por atribuir formatações css 
+
+        $('#resultado1').one('mouseenter', e => alert('Voce esta dentro da div2'))
+
+        //metodo "one": basicamente esse metodo tem o intuito de realizar um evento uma unica vez ou seja o evento e disparado somente uma vez dentro da pagina 
+
+        $('#resultado1').dblclick(e => $('#resultado1').hide(3000).show(3000))
+
+        //metodo "dblclick": basicamente esse metodo capitura o evendo ao clicar 2x com o mouser, esse metodo recebe uma função que defini oque sera feito no elemento ao ser chamado o envento
+
+        
+
     </script>
 </body>

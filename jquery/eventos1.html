@@ -20,6 +20,22 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function moverMouse(e){
+            $('#posicao').html(`X: ${e.clientX} Y: ${e.clientY}`)
+        }
+
+        $('body').on('mousemove', moverMouse)//Nesse caso conforme o mouse e movimenta dentro da tag "body" o metodo "on" captura esse evento realizando uma funcionalidade em cima disso 
+
+        //Para se trabalhar com eventos em Jquery e nescessario utilizar o metodo "on()"
+        //Esse metodo recebe 2 parametro 1º nome_evento | 2º função a ser chamada assim que o evento for disparado 
+
+        let clique = 0
+
+        $('body').click(e => {
+            $('#cliques').html(`Cliques : ${++clique}`)//passando os valores para dentro da tag com id "cliques"
+        })
+
+        //Basicamente o metodo "click" tem como funcionalidade capiturar o evento de clicar nesse caso ele capturou esse evento e passou para dentro da tag html a quantidade de vezes que esse evento foi chamado 
+
     </script>
 </body>
